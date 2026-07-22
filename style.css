@@ -87,6 +87,28 @@ button:hover {
   }
 }
 
+/* Fun fact section */
+.fact-section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 20px 20px;
+  text-align: center;
+}
+
+.fact-section h2 {
+  color: #212121;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.fact-section p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 /* Gallery flex container */
 .gallery {
   display: flex;
@@ -108,6 +130,13 @@ button:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Three columns on wider screens */
@@ -124,10 +153,96 @@ button:hover {
   border-radius: 4px;
 }
 
-.gallery-item p {
+.gallery-item h3 {
   margin-top: 10px;
   padding: 5px;
+  font-size: 18px;
+}
+
+.gallery-item p {
+  margin-top: 8px;
+  padding: 5px;
   font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Modal styles */
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  width: min(900px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #212121;
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body h2 {
+  color: #212121;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.modal-date {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.modal-explanation {
+  line-height: 1.6;
+  color: #333;
 }
 
 /* Placeholder content */
